@@ -18,6 +18,7 @@ RUN apt-get install -y iputils-ping \
 RUN apt-get autoclean
 RUN apt-get clean
 # RUN apt-get autoremove
+RUN rm -rf /var/lib/apt/lists/*
 
 EXPOSE  80
 

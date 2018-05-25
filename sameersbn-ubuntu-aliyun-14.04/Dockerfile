@@ -1,20 +1,17 @@
-# This dockerfile uses the Ubuntu 16.04 image
+# This dockerfile uses the sameersbn/ubuntu:14.04 image
 # VERSION 1
 # Author: sinlov
 # Command format: Instruction [arguments / command]
 
-FROM ubuntu:16.04
+FROM sameersbn/ubuntu:14.04.20180124
 
 MAINTAINER  sinlov sinlovgmppt@gmail.com
 
 RUN cp /etc/apt/sources.list /etc/apt/sources.list.bak
 COPY ./sources.list /etc/apt/
 
-RUN apt-get update
-RUN apt-get install -y iputils-ping \
-   curl \
-   vim \
-   net-tools
+# RUN apt-get update
+# RUN apt-get install -y curl
 RUN apt-get autoclean
 RUN apt-get clean
 # RUN apt-get autoremove
