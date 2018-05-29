@@ -12,10 +12,10 @@ COPY ./sources.list /etc/apt/
 
 # RUN apt-get update
 # RUN apt-get install -y curl
-RUN apt-get autoclean
-RUN apt-get clean
-# RUN apt-get autoremove
-RUN rm -rf /var/lib/apt/lists/*
+RUN apt-get autoclean \
+  && apt-get clean \
+  && apt-get autoremove \
+  && rm -rf /var/lib/apt/lists/*
 
 EXPOSE  80
 

@@ -11,14 +11,14 @@ RUN cp /etc/apt/sources.list /etc/apt/sources.list.bak
 COPY ./sources.list /etc/apt/
 
 RUN apt-get update \
- && apt-get install -y iputils-ping \
-   curl \
-   vim \
-   net-tools \
- && apt-get autoclean \
- && apt-get clean \
- && apt-get autoremove \
- && rm -rf /var/lib/apt/lists/*
+  && apt-get install -y iputils-ping \
+  curl \
+  vim \
+  net-tools \
+  && apt-get autoclean \
+  && apt-get clean \
+  && apt-get autoremove \
+  && rm -rf /var/lib/apt/lists/*
 
 EXPOSE  80
 
