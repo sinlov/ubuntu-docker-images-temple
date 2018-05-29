@@ -19,7 +19,8 @@ RUN apt-get autoclean \
 
 EXPOSE  80
 
-CMD /bin/bash
+ENTRYPOINT ["tail", "-F", "/var/log/faillog"]
+CMD ["-F", "/var/log/faillog"]
 
 # ENV
 
